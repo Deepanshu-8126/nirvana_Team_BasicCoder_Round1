@@ -1,0 +1,90 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  background: #c1c3d2;
+  color: #000000;
+  width: 360px;
+  min-height: 420px;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+header {
+  border-bottom: 1px solid #dadce0;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+h2 { font-size: 15px; margin: 0; }
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+button {
+  background-color: #111c03;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+button:hover { background-color: #155ec6; }
+button:active { transform: scale(0.98); }
+
+#addBox {
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  padding: 8px;
+  background: #f8f9fa;
+  margin-bottom: 10px;
+}
+#addBox label {
+  display: block;
+  font-size: 13px;
+  color: #5f6368;
+  margin: 4px 0 2px;
+}
+#addBox input, #addBox select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+#addBox input:focus,
+#addBox select:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+#searchArea { margin-bottom: 8px; }
+#search {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+}
+
+#bookList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bookmark {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.bookmark a { color: #1a73e8; text-decoration: none; }
+.bookmark:hover { background: #eef3fd; }
+
+.hidden { display: none; }

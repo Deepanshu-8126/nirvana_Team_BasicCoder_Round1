@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Marks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>Bookmarks</h2>
+  </header>
+
+  <div class="top-actions">
+    <button id="addCurrent">Bookmark This Tab</button>
+    <button id="addManual">Add Bookmark Manually</button>
+  </div>
+
+  <div id="addBox" class="hidden">
+    <label>Title:</label>
+    <input id="title" type="text" placeholder="Page title">
+    <label>URL:</label>
+    <input id="url" type="url" placeholder="https://example.com">
+    <label>Folder:</label>
+    <select id="folder">
+      <option value="General">General</option>
+      <option value="Work">Work</option>
+      <option value="Personal">Personal</option>
+      <option value="Study">Study</option>
+    </select>
+    <button id="saveBtn">Save</button>
+  </div>
+
+  <div id="searchArea">
+    <input id="search" placeholder="Search bookmarks...">
+  </div>
+
+  <div id="bookList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

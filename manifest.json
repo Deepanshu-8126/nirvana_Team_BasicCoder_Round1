@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "My Vault",
+  "version": "1.0",
+  "description": "We team basic coder built this to organise web pages fast",
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nova Marks"
+  },
+  "icons": {
+    "16": "icons8-bookmark-16 (1).png",
+    "48": "icons8-bookmark-48.png",
+    "128": "icons8-bookmark-128.png"
+  }
+}
