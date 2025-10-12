@@ -1,12 +1,10 @@
-// --- Cross‑browser API ---
 const browserAPI = typeof browser !== "undefined" ? browser : chrome;
 
-// --- Local data ---
+
 let myBookList = JSON.parse(localStorage.getItem("myBookList")) || [];
 let myFolders = JSON.parse(localStorage.getItem("myFolders")) || ["General", "Work", "Personal", "Study"];
 let currentFolder = "All";
 
-// --- DOM Elements ---
 const addCurrentBtn = document.getElementById("addCurrent");
 const addManualBtn = document.getElementById("addManual");
 const formBox = document.getElementById("addBox");
@@ -21,7 +19,7 @@ const newFolderName = document.getElementById("newFolderName");
 const createFolderBtn = document.getElementById("createFolderBtn");
 const folderArrow = document.getElementById("folderArrow");
 
-// ----------------- INITIALISE FOLDERS -----------------
+
 function initFolders() {
   if (!folderList) return;
   folderList.innerHTML = "";
@@ -50,7 +48,7 @@ function setFolder(name) {
   displayBookmarks(searchInput.value, currentFolder);
 }
 
-// ----------------- CREATE NEW FOLDER -----------------
+
 createFolderBtn?.addEventListener("click", () => {
   const name = newFolderName.value.trim();
   if (!name || myFolders.includes(name)) return;
@@ -60,7 +58,7 @@ createFolderBtn?.addEventListener("click", () => {
   initFolders();
 });
 
-// ----------------- TOGGLE FOLDER LIST -----------------
+
 folderArrow?.addEventListener("click", () => {
   folderList.style.display = folderList.style.display === "block" ? "none" : "block";
   folderArrow.classList.toggle("open");
@@ -77,7 +75,7 @@ addCurrentBtn?.addEventListener("click", () => {
   }).catch(err => console.error("Bookmark API error:", err));
 });
 
-// ----------------- LOAD SYSTEM BOOKMARKS -------------
+
 function loadBrowserBookmarks() {
   if (!browserAPI.bookmarks || !browserAPI.bookmarks.getTree) return;
   browserAPI.bookmarks.getTree().then(tree => {
@@ -112,7 +110,6 @@ function renderSystemBookmarks(items) {
     listBox.appendChild(div);
   });
 
-  // delete system bookmarks
   listBox.querySelectorAll(".delBtn").forEach(btn => {
     btn.onclick = () => {
       const id = btn.dataset.id;
@@ -121,14 +118,14 @@ function renderSystemBookmarks(items) {
   });
 }
 
-// ----------------- ADD MANUAL BOOKMARK ---------------
+
 addManualBtn?.addEventListener("click", () => {
   titleInput.value = "";
   urlInput.value = "";
   formBox.classList.remove("hidden");
 });
 
-// ----------------- SAVE LOCAL ENTRY -----------------
+
 saveBtn?.addEventListener("click", () => {
   const t = titleInput.value.trim();
   const u = urlInput.value.trim();
@@ -140,7 +137,7 @@ saveBtn?.addEventListener("click", () => {
   displayBookmarks(searchInput.value, currentFolder);
 });
 
-// ----------------- DISPLAY LOCAL BOOKMARKS -----------
+
 function displayBookmarks(filterTxt = "", folderFilter = "All") {
   const data = myBookList.filter(
     b =>
@@ -174,7 +171,7 @@ function displayBookmarks(filterTxt = "", folderFilter = "All") {
     listBox.appendChild(div);
   });
 
-  // Move bookmark between folders
+
   listBox.querySelectorAll(".moveSel").forEach(sel => {
     sel.onchange = () => {
       const id = sel.dataset.id;
@@ -185,7 +182,7 @@ function displayBookmarks(filterTxt = "", folderFilter = "All") {
     };
   });
 
-  // Delete local bookmark
+
   listBox.querySelectorAll(".removeBtn").forEach(btn => {
     btn.onclick = () => {
       const id = btn.dataset.id;
@@ -196,12 +193,13 @@ function displayBookmarks(filterTxt = "", folderFilter = "All") {
   });
 }
 
-// ----------------- SEARCH -----------------
+
 searchInput?.addEventListener("input", () =>
   displayBookmarks(searchInput.value, currentFolder)
 );
 
-// ----------------- INIT -----------------
+
 initFolders();
 displayBookmarks();
+
 loadBrowserBookmarks();
