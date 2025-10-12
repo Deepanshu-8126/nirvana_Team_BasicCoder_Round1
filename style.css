@@ -1,8 +1,10 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 14px;
-  background: #c1c3d2;
+
+  background: linear-gradient(135deg, #aeb3d5 0%, #d2d5e8 100%);
   color: #000000;
+
   width: 360px;
   min-height: 420px;
   margin: 0;
@@ -46,7 +48,7 @@ button:active { transform: scale(0.98); }
 #addBox label {
   display: block;
   font-size: 13px;
-  color: #5f6368;
+  color: #7f8791;
   margin: 4px 0 2px;
 }
 #addBox input, #addBox select {
@@ -89,7 +91,7 @@ button:active { transform: scale(0.98); }
 .bookmark:hover { background: #eef3fd; }
 .hidden { display: none; }
 
-/* ---- Folder Section ---- */
+
 #folderSection {
   border: 1px solid #dadce0;
   border-radius: 6px;
@@ -139,7 +141,7 @@ button:active { transform: scale(0.98); }
   color: #fff;
 }
 
-/* Add new folder input */
+
 #newFolderBox {
   display: flex;
   gap: 4px;

@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Basic Coder Marks",
+  "name": "Basic Coder Marks",
   "version": "1.0",
-  "description": "Simple, human-made bookmark manager",
-  "permissions": ["storage", "tabs"],
+  "description": "Simple, human‑made bookmark manager built by Team Basic Coder",
+  "permissions": ["bookmarks", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Basic Coder Marks"
+    "default_title": "Basic Coder Marks"
   },
   "icons": {
     "16": "icons8-bookmark-16 (1).png",
