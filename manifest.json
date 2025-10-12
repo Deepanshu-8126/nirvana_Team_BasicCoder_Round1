@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "My Vault",
+  "name": "Basic Coder Marks",
   "version": "1.0",
-  "description": "We team basic coder built this to organise web pages fast",
+  "description": "Simple, human-made bookmark manager",
   "permissions": ["storage", "tabs"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Nova Marks"
+    "default_title": "Basic Coder Marks"
   },
   "icons": {
     "16": "icons8-bookmark-16 (1).png",

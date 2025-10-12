@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Marks</title>
+  <title>Basic Coder Marks</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,19 @@
   <div class="top-actions">
     <button id="addCurrent">Bookmark This Tab</button>
     <button id="addManual">Add Bookmark Manually</button>
+    
   </div>
-
+<div id="folderSection">
+  <div id="folderToggle">
+    <span>Folders</span>
+    <span id="folderArrow">▼</span>
+  </div>
+  <ul id="folderList"></ul>
+  <div id="newFolderBox">
+    <input id="newFolderName" placeholder="New folder name">
+    <button id="createFolderBtn">Add</button>
+  </div>
+</div>
   <div id="addBox" class="hidden">
     <label>Title:</label>
     <input id="title" type="text" placeholder="Page title">
@@ -25,9 +36,9 @@
     <label>Folder:</label>
     <select id="folder">
       <option value="General">General</option>
-      <option value="Work">Work</option>
+      <option value="Work">Movies</option>
       <option value="Personal">Personal</option>
-      <option value="Study">Study</option>
+      <option value="Python">Python</option>
     </select>
     <button id="saveBtn">Save</button>
   </div>

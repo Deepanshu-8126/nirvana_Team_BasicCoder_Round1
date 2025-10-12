@@ -83,8 +83,84 @@ button:active { transform: scale(0.98); }
   padding: 8px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .bookmark a { color: #1a73e8; text-decoration: none; }
 .bookmark:hover { background: #eef3fd; }
-
 .hidden { display: none; }
+
+/* ---- Folder Section ---- */
+#folderSection {
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  background: #f8f9fa;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+#folderToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+#folderArrow {
+  transition: transform 0.3s;
+  font-size: 14px;
+}
+
+#folderArrow.open {
+  transform: rotate(180deg);
+}
+
+#folderList {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: none;
+}
+
+#folderList li {
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#folderList li:hover {
+  background: #eef3fd;
+}
+
+#folderList li.active {
+  background: #111c03;
+  color: #fff;
+}
+
+/* Add new folder input */
+#newFolderBox {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+#newFolderName {
+  flex: 1;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 13px;
+}
+#createFolderBtn {
+  background: #111c03;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+#createFolderBtn:hover {
+  background: #155ec6;
+}
